@@ -25,7 +25,15 @@ const scrollToSection = (sectionId) => {
 export const Header = () => {
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] z-50">
-      <nav className="flex items-center justify-between px-10 py-3 bg-black/10 backdrop-blur-lg border border-white/20 rounded-full shadow-lg min-h-[64px]">
+      <nav
+        className="flex items-center justify-between px-10 py-3 rounded-full min-h-[64px] w-full"
+        style={{
+          background: 'rgba(0,0,0,0.1)',
+          boxShadow: '0px 0px 30px rgba(227,228,237,0.37)',
+          border: '2px solid rgba(255,255,255,0.18)',
+          backdropFilter: 'blur(30px)',
+        }}
+      >
         {/* Logo */}
         <div className="flex items-center space-x-4 select-none">
           {/* User's avatar as logo */}
