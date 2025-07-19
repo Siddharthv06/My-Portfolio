@@ -1,14 +1,13 @@
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom'; // 👈 Add this
 
 import './index.css';
 import App from './App.jsx';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter basename="/Portfolio">
+// This file should export App as default if not using root rendering
+export default function Main() {
+  return (
+    <StrictMode>
       <App />
-    </BrowserRouter>
-  </StrictMode>
-);
+    </StrictMode>
+  );
+}
