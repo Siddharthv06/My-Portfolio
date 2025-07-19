@@ -7,7 +7,7 @@ import App from './App.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/Portfolio"> {/* 👈 Add this */}
+    <BrowserRouter basename="/Portfolio">
       <App />
     </BrowserRouter>
   </StrictMode>
