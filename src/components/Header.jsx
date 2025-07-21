@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import BlurText from "./BlurText";
 import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 
+
 const navItems = [
   { name: "Home", id: "home" },
   { name: "About", id: "about" },

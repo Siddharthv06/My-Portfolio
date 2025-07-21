@@ -43,22 +43,20 @@ const AboutSection = () => {
     <section 
       ref={sectionRef}
       id="about" 
-      className="min-h-screen h-screen bg-gradient-to-b from-gray-900 to-black flex items-center justify-center px-4  relative"
+      className="min-h-screen h-auto bg-gradient-to-b from-gray-900 to-black flex items-center justify-center px-2 sm:px-4 relative"
     >
-      <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-20 pl-0 md:pl-8">
+      <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-10 sm:gap-20 pl-0 md:pl-8">
         <div className="flex-1 text-left">
           <motion.h2 
-            className="text-6xl font-['My_Soul',cursive] text-white mb-6 text-center lowercase"
+            className="text-4xl sm:text-5xl md:text-6xl font-['My_Soul',cursive] text-white mb-4 sm:mb-6 text-center lowercase"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             ABOUT ME
-              
-            
           </motion.h2>
           <motion.p 
-            className="text-base md:text-lg text-gray-200 mb-6 leading-relaxed text-left"
+            className="text-sm sm:text-base md:text-lg text-gray-200 mb-4 sm:mb-6 leading-relaxed text-left"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -75,28 +73,28 @@ const AboutSection = () => {
             />
           </motion.p>
           <motion.div 
-            className="flex flex-wrap justify-start gap-2 mb-8"
+            className="flex flex-wrap justify-start gap-2 mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             {skills.map(skill => (
-              <span key={skill.name} className={`${skill.color} text-black px-2 py-1 rounded-full font-semibold shadow-lg text-sm`}>{skill.name}</span>
+              <span key={skill.name} className={`${skill.color} text-black px-2 py-1 rounded-full font-semibold shadow-lg text-xs sm:text-sm`}>{skill.name}</span>
             ))}
           </motion.div>
           <motion.div 
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             {skills.map((skill, index) => (
               <div key={skill.name} className="text-left">
-                <div className="flex justify-between mb-2">
-                  <span className="text-gray-200 font-semibold">{skill.name}</span>
-                  <span className="text-cyan-400 font-semibold">{skill.level}%</span>
+                <div className="flex justify-between mb-1 sm:mb-2">
+                  <span className="text-gray-200 font-semibold text-xs sm:text-base">{skill.name}</span>
+                  <span className="text-cyan-400 font-semibold text-xs sm:text-base">{skill.level}%</span>
                 </div>
-                <div className="w-full h-4 bg-gray-800 rounded-full overflow-hidden shadow-inner">
+                <div className="w-full h-3 sm:h-4 bg-gray-800 rounded-full overflow-hidden shadow-inner">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
@@ -105,19 +103,18 @@ const AboutSection = () => {
                       duration: 1.5,
                       ease: "easeOut"
                     }}
-                    className={`${skill.color} h-4 rounded-full shadow-lg`}
+                    className={`${skill.color} h-3 sm:h-4 rounded-full shadow-lg`}
                   />
                 </div>
               </div>
             ))}
           </motion.div>
         </div>
-
-        {/* Book Cover on the right */}
+        {/* Book Cover on the right (desktop) */}
         <motion.div 
-          className="hidden lg:flex flex-shrink-2 ml-[120px]"
+          className="hidden lg:flex flex-shrink-2 ml-0 lg:ml-[60px] xl:ml-[120px]"
           initial={{ opacity: 0, x: -1200 }}
-          whileInView={{ opacity: 1, x: -100,y:100 }}
+          whileInView={{ opacity: 1, x: -100, y: 100 }}
           transition={{ duration: 1.0, delay: 0.8 }}
         >
           <a
@@ -139,10 +136,9 @@ const AboutSection = () => {
             </ModernBookCover>
           </a>
         </motion.div>
-
         {/* Mobile Book Cover */}
         <motion.div 
-          className="flex lg:hidden justify-center mt-8"
+          className="flex lg:hidden justify-center mt-6 sm:mt-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.8 }}

@@ -1,13 +1,13 @@
 import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 
 import './index.css';
 import App from './App.jsx';
 
-// This file should export App as default if not using root rendering
-export default function Main() {
-  return (
-    <StrictMode>
-      <App />
-    </StrictMode>
-  );
-}
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);

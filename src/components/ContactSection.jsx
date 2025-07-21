@@ -53,27 +53,27 @@ function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col items-center justify-center bg-black px-4 font-winky"
+      className="min-h-screen flex flex-col items-center justify-center bg-black px-2 sm:px-4 font-winky"
     >
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-6xl font-['My_Soul',cursive] text-white mb-6 text-center lowercase">contact me</h2>
-        <p className="text-lg text-gray-300 mb-8">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-['My_Soul',cursive] text-white mb-4 sm:mb-6 text-center lowercase">contact me</h2>
+        <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8">
           Click below to open the contact form. I’d love to hear from you!
         </p>
         <button
           onClick={() => setShowForm(true)}
-          className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300"
+          className="px-4 sm:px-6 py-2 sm:py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300 text-base sm:text-lg"
         >
           Open Form
         </button>
         <div
           id="vismeForm"
-          className={`mt-10 ${showForm ? "block" : "hidden"} w-full relative`}
+          className={`mt-8 sm:mt-10 ${showForm ? "block" : "hidden"} w-full relative`}
           style={{ minHeight: "100vh", overflow: "hidden" }}
         >
           {formLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 z-10">
-              <span className="text-white text-xl font-semibold animate-pulse">Please wait…</span>
+              <span className="text-white text-lg sm:text-xl font-semibold animate-pulse">Please wait…</span>
             </div>
           )}
         </div>

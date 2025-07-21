@@ -49,7 +49,7 @@ const Hero = ({ showBook, bookComponent }) => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen h-screen w-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-end justify-center relative overflow-hidden ">
+    <section id="home" className="min-h-screen h-screen w-full bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-end justify-center relative overflow-hidden">
       {/* Background Particles */}
       <Particles
         particleColors={['#3b82f6', '#8b5cf6', '#06b6d4']}
@@ -67,6 +67,7 @@ const Hero = ({ showBook, bookComponent }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
+          className="absolute left-1/2 top-1/3 sm:top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-2xl flex justify-center z-30 pointer-events-none"
         >
           <LightningText copy="Siddharth," />
         </motion.div>
@@ -74,37 +75,17 @@ const Hero = ({ showBook, bookComponent }) => {
       {/* Book - absolutely positioned center bottom */}
       {/* ...existing code for book... */}
       <div
-        className={[
-          "z-40",
-          "absolute",
-          "flex",
-          "flex-col",
-          "items-end",
-          "justify-end",
-          "select-none",
-          "w-full",
-          "pointer-events-auto",
-        ].join(" ")}
+        className="z-40 absolute flex flex-col items-end justify-end select-none w-full pointer-events-auto px-4 sm:px-0"
         style={{
-          bottom: "18%",
-          right: "40%",
-          left: "auto",
+          bottom: "12%",
+          right: 0,
+          left: 0,
           position: "absolute",
         }}
       >
         <motion.div
           {...fontmotion(3.6)}
-          className={[
-            "mt-4",
-            "text-5xl",
-            "md:text-4xl",
-            "font-medium",
-            "text-white",
-            "tracking-tight",
-            "text-right",
-            "font-['Cedarville_Cursive',cursive]",
-            "pointer-events-auto",
-          ].join(" ")}
+          className="mt-4 text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-medium text-white tracking-tight text-right font-['Cedarville_Cursive',cursive] pointer-events-auto pr-2 sm:pr-8"
         >
           <Typewriter />
         </motion.div>
