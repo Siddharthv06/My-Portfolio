@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import BlurText from "./BlurText";
 import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
+import { useState, useEffect } from "react";
 
 
 const navItems = [
@@ -24,10 +25,20 @@ const scrollToSection = (sectionId) => {
 };
 
 export const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  // Prevent background scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] z-50">
       <nav
-        className="flex items-center justify-between px-10 py-3 rounded-full min-h-[64px] w-full"
+        className="flex items-center justify-between px-4 sm:px-10 py-3 rounded-full min-h-[64px] w-full"
         style={{
           background: 'rgba(0,0,0,0.1)',
           boxShadow: '0px 0px 30px rgba(227,228,237,0.37)',
@@ -43,8 +54,18 @@ export const Header = () => {
             <BlurText text="PORTFOLIO" className="uppercase" animateBy="letters" delay={30} />
           </span>
         </div>
-        {/* Nav Links */}
-        <div className="flex space-x-8">
+        {/* Hamburger for mobile */}
+        <button
+          className="sm:hidden flex flex-col justify-center items-center w-10 h-10 ml-auto z-50"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-label="Toggle menu"
+        >
+          <span className={`block w-6 h-0.5 bg-white mb-1 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-white mb-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
+        {/* Nav Links (desktop) */}
+        <div className="hidden sm:flex space-x-8">
           {navItems.map((item) => (
             <motion.button
               key={item.id}
@@ -56,8 +77,8 @@ export const Header = () => {
             </motion.button>
           ))}
         </div>
-        {/* Social Icons */}
-        <div className="flex items-center space-x-4">
+        {/* Social Icons (desktop) */}
+        <div className="hidden sm:flex items-center space-x-4">
           {socialIcons.map(({ Icon, link, delay }, idx) => (
             <motion.a
               key={link}
@@ -74,6 +95,51 @@ export const Header = () => {
             </motion.a>
           ))}
         </div>
+        {/* Mobile Menu Dropdown + Overlay */}
+        {menuOpen && (
+          <>
+            {/* Overlay */}
+            <div
+              className="fixed inset-0 bg-black bg-opacity-40 z-40 animate-fade-in"
+              onClick={() => setMenuOpen(false)}
+            />
+            {/* Dropdown */}
+            <motion.div
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -100, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 30 }}
+              className="sm:hidden fixed top-0 left-0 w-full rounded-b-2xl bg-black bg-opacity-95 flex flex-col items-center py-8 space-y-6 z-50 shadow-2xl"
+            >
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    scrollToSection(item.id);
+                    setMenuOpen(false);
+                  }}
+                  className="text-white text-lg font-bold py-2 px-4 w-full text-center hover:bg-white hover:bg-opacity-10 rounded-lg transition"
+                >
+                  {item.name}
+                </button>
+              ))}
+              <div className="flex space-x-6 mt-4">
+                {socialIcons.map(({ Icon, link }, idx) => (
+                  <a
+                    key={link}
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-gray-300 transition duration-200 cursor-pointer p-2 rounded-full hover:bg-white hover:bg-opacity-10"
+                    style={{ zIndex: 1000 }}
+                  >
+                    <Icon size={22} />
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
       </nav>
     </header>
   );
