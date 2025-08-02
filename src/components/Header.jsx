@@ -48,8 +48,7 @@ export const Header = () => {
       >
         {/* Logo */}
         <div className="flex items-center space-x-4 select-none">
-          {/* User's avatar as logo */}
-         <img src="/myAvatar.png" alt="Avatar" className="w-10 h-10 rounded-full object-cover" />
+          {/* Removed user's avatar as logo */}
           <span className="text-xl font-extrabold text-white tracking-widest">
             <BlurText text="PORTFOLIO" className="uppercase" animateBy="letters" delay={30} />
           </span>
@@ -132,17 +131,17 @@ export const Header = () => {
                     rel="noopener noreferrer"
                     className="text-white hover:text-gray-300 transition duration-200 cursor-pointer p-2 rounded-full hover:bg-white hover:bg-opacity-10"
                     style={{ zIndex: 1000 }}
-                  >
+                    style={{ zIndex: 1000 }}
+                  > <Icon size={22} />
                     <Icon size={22} />
                   </a>
-                ))}
-              </div>
+                ))}>
+              </div>.div>
             </motion.div>
           </>
-        )}
-      </nav>
+        )}v>
+      </nav>>
     </header>
   );
 };
-
-export default Header;
+export default Header;export default Header;
