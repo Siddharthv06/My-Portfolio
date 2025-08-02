@@ -36,6 +36,7 @@ export default function App() {
 
   return (
     <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 min-h-screen relative font-winky">
+      <title>My Portfolio</title>
       <div className="w-full h-full">
         <SmokeEffect />
       </div>

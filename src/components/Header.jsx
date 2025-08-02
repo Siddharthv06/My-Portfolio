@@ -12,9 +12,9 @@ const navItems = [
 ];
 
 const socialIcons = [
-  { Icon: FiGithub, link: "https://github.com/", delay: 1.5 },
-  { Icon: FiLinkedin, link: "https://linkedin.com/", delay: 1.7 },
-  { Icon: FiInstagram, link: "https://instagram.com/", delay: 1.9 },
+  { Icon: FiGithub, link: "https://github.com/Siddharthv06/", delay: 1.5 },
+  { Icon: FiLinkedin, link: "https://www.linkedin.com/in/siddharth-vishwakarma-54971823b/", delay: 1.7 },
+  { Icon: FiInstagram, link: "https://www.instagram.com/siddharthv_06/", delay: 1.9 },
 ];
 
 const scrollToSection = (sectionId) => {
@@ -49,7 +49,7 @@ export const Header = () => {
         {/* Logo */}
         <div className="flex items-center space-x-4 select-none">
           {/* User's avatar as logo */}
-          <img src="/myAvatar.png" alt="Avatar" className="w-10 h-10 rounded-full object-cover" />
+         <img src="/myAvatar.png" alt="Avatar" className="w-10 h-10 rounded-full object-cover" />
           <span className="text-xl font-extrabold text-white tracking-widest">
             <BlurText text="PORTFOLIO" className="uppercase" animateBy="letters" delay={30} />
           </span>

@@ -14,10 +14,10 @@ const projects = [
     link: "#"
   },
   {
-    title: "E-Commerce Platform",
+    title: "Local llm Chatbot",
     description: "A full-stack e-commerce platform with user authentication, payment processing, and admin dashboard.",
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    link: "#"
+    link: "#https://github.com/Siddharthv06/ollama-chatbot"
   },
   {
     title: "Task Management App",
