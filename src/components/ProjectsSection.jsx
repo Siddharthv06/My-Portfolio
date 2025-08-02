@@ -11,13 +11,13 @@ const projects = [
     title: "3D Portfolio",
     description: "A modern 3D portfolio built with React, Three.js, and Framer Motion. Features interactive 3D elements and smooth animations.",
     technologies: ["React", "Three.js", "Framer Motion", "Tailwind CSS"],
-    link: "#"
+    link: "https://siddharthv06.github.io/My-Portfolio/"
   },
   {
     title: "Local llm Chatbot",
     description: "A full-stack e-commerce platform with user authentication, payment processing, and admin dashboard.",
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    link: "#https://github.com/Siddharthv06/ollama-chatbot"
+    link: "https://github.com/Siddharthv06/ollama-chatbot"
   },
   {
     title: "Task Management App",
