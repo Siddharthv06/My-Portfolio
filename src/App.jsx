@@ -14,12 +14,14 @@ export default function App() {
   const aboutRef = useRef(null);
 
   useEffect(() => {
-    const observer = new window.IntersectionObserver(
-      ([entry]) => setAboutInView(entry.isIntersecting),
-      { threshold: 0.4 }
-    );
-    if (aboutRef.current) observer.observe(aboutRef.current);
-    return () => observer.disconnect();
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        ([entry]) => setAboutInView(entry.isIntersecting),
+        { threshold: 0.4 }
+      );
+      if (aboutRef.current) observer.observe(aboutRef.current);
+      return () => observer.disconnect();
+    }
   }, []);
 
   const book = (

@@ -3,7 +3,6 @@ import BlurText from "./BlurText";
 import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 import { useState, useEffect } from "react";
 
-
 const navItems = [
   { name: "Home", id: "home" },
   { name: "About", id: "about" },
@@ -101,7 +100,7 @@ export const Header = () => {
             <div
               className="fixed inset-0 bg-black bg-opacity-40 z-40 animate-fade-in"
               onClick={() => setMenuOpen(false)}
-            />
+            ></div>
             {/* Dropdown */}
             <motion.div
               initial={{ y: -100, opacity: 0 }}
@@ -131,17 +130,16 @@ export const Header = () => {
                     rel="noopener noreferrer"
                     className="text-white hover:text-gray-300 transition duration-200 cursor-pointer p-2 rounded-full hover:bg-white hover:bg-opacity-10"
                     style={{ zIndex: 1000 }}
-                    style={{ zIndex: 1000 }}
-                  > <Icon size={22} />
+                  >
                     <Icon size={22} />
                   </a>
-                ))}>
-              </div>.div>
+                ))}
+              </div>
             </motion.div>
           </>
-        )}v>
-      </nav>>
+        )}
+      </nav>
     </header>
   );
 };
-export default Header;export default Header;
+export default Header;
