@@ -102,7 +102,7 @@ const ProjectsSection = () => {
                 {projects[0].title}
               </a>,
               <a 
-                key="ecommerce"
+                key="local llm chatbot"
                 href={projects[1].link}
                 className="w-full h-full bg-gradient-to-br from-green-400 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xs sm:text-sm px-2 text-center hover:scale-105 transition-transform duration-300"
               >
